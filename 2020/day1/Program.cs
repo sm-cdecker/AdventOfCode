@@ -1,26 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace day1 {
 	class Program {
 		static void Main(string[] args) {
+			
+			List<int> myList = new List<int>(System.IO.File.ReadAllLines("numbers.txt").Select(x => int.Parse(x)));
+			part1(myList);
+			part2(myList);
+		}
 
-			List<string> myList = new List<string>(System.IO.File.ReadAllLines("numbers.txt"));
+		static void part1(List<int> myList) {
 
-			foreach (string row in myList) {
+			foreach (int row in myList) {
 
-				var number = int.Parse(row);
 
-				if (number < 2020) {
+				if (row < 2020) {
 
-					if (myList.Contains((2020 - number).ToString())) {
+					if (myList.Contains((2020 - row))) {
 
-						Console.WriteLine((2020 - number) * number);
+						Console.WriteLine((2020 - row) * row);
 						break;
 					}
 				}
 			}
+		}
 
+		static void part2(List<int> myList) {
+			foreach(var oldest in myList) {
+				foreach(var middlest in myList.Where(x => x != oldest && (oldest + x < 2020))) {
+					foreach(var youngest in myList.Where(x => x != oldest && x != middlest)) {
+						if (youngest + oldest + middlest == 2020)  {
+							Console.WriteLine(youngest * oldest * middlest);
+						}
+					}
+				}
+			}
 		}
 	}
 }
