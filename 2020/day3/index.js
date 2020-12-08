@@ -2,7 +2,7 @@ const fs = require('fs');
 
 function main() {
 	const treeGrid = fs
-		.readFileSync('input', 'utf8')
+		.readFileSync('./input', 'utf8')
 		.split('\r\n')
 		.map(row => row.split(''));	
 	
