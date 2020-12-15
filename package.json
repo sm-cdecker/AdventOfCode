@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1",
-	"main:js": "node ./index.js",
-	"2020-day3": "node ./2020/day3/index.js",
-	"2020-day4": "ts-node /2020/day4/main.ts"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main:js": "node ./index.js",
+    "2020-day3": "node ./2020/day3/index.js",
+    "2020-day4": "ts-node /2020/day4/main.ts"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/sm-cdecker/AdventOfCode#readme",
   "devDependencies": {
+    "@types/node": "^14.14.10",
     "ts-loader": "^8.0.11",
     "webpack": "^5.9.0"
   }
