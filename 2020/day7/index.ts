@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 
 export interface Bag {[color: string]: number }
-
+// comment test
 const shinyGold = 'shiny gold';
 
 function main() {
